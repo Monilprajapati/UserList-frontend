@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { addUser } from "../service/api";
+import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   const userdetails = {
     name: "",
@@ -16,8 +18,10 @@ const AddUser = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const addUserDetails = () => {
+  const addUserDetails = (e) => {
+    e.preventDefault();
     addUser(user);
+    navigate("/all");
   };
   return (
     <div className="flex justify-center mt-20">
@@ -37,7 +41,7 @@ const AddUser = () => {
               <input
                 type="text"
                 id="text"
-                name="Name"
+                name="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                 placeholder="Ajay Raj"
                 required
@@ -99,7 +103,7 @@ const AddUser = () => {
             <button
               type="submit"
               className="py-3 px-10 w-full mx-auto text-md font-medium bg-white text-center text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
-              onClick={() => addUserDetails()}
+              onClick={(e) => addUserDetails(e)}
             >
               Send message
             </button>
