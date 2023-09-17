@@ -15,9 +15,9 @@ export const addUser = async (data) => {
   }
 };
 
-// export const deleteUser = async (id) => {
-//   return await axios.delete(`${URL}/${id}`);
-// };
+export const deleteUser = async (id) => {
+  return await axios.delete(`${URL}/${id}`);
+};
 
 export const editUser = async (id, user) => {
   return await axios.put(`${URL}/${id}`, user);

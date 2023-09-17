@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user , deleteUserData}) => {
   const { email, username, number, name, _id } = user;
   return (
     <div className="w-fit flex flex-col font-sans justify-around bg-slate-300 border border-black rounded-md">
@@ -20,7 +20,7 @@ const UserCard = ({ user }) => {
           </button>
         </Link>
         <button className="px-7 py-2 bg-red-500 font-semibold text-lg"
-        // onClick={() => deleteUserData(_id)}
+        onClick={() => deleteUserData(_id)}
         >
           Delete
         </button>
