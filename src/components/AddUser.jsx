@@ -105,7 +105,7 @@ const AddUser = () => {
               className="py-3 px-10 w-full mx-auto text-md font-medium bg-white text-center text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
               onClick={(e) => addUserDetails(e)}
             >
-              Send message
+              Add Me
             </button>
           </form>
         </div>

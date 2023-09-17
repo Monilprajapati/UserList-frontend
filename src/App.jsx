@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import All from "./components/All";
 import AddUser from "./components/AddUser";
-import UserCard from "./components/USerCard";
+import EditUser from "./components/EditUser";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/all" element={<All />} />
           <Route path="/add" element={<AddUser />} />
+          <Route path="/edit/:id" element={<EditUser />} />
         </Routes>
       </Router>
     </>

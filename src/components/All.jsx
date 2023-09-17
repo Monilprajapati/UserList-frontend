@@ -9,17 +9,22 @@ const All = () => {
   useEffect(() => {
     getAllUsers();
   }, []);
-
+  
   const getAllUsers = async () => {
     let response = await getUsers();
     setUsers(response.data);
   };
+  // const deleteUserData = async (id) => {
+  //   await deleteUser(id);
+  //   getAllUsers();
+  // }
+  // deleteUserData={deleteUserData}
   console.log(users);
-  
+
   return (
     <div className="flex flex-wrap my-10 ml-10 gap-20">
       {users.map((user) => (
-        <UserCard key={user.id} user={user} />
+        <UserCard key={user._id} user={user}  />
       ))}
     </div>
   );
